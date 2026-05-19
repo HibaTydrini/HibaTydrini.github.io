@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hiba Tydrini Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+
+    body {
+      background-color: #F5F0E8;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #1A1A18;
+      padding: 40px;
+      margin: 0;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* each section of the page has its own color */
+    .cell {
+      border: 2px solid #1A1A18;
+      padding: 32px;
+      background-color: #FDFCF8;
+    }
+
+    .cell-hero      { background-color: #1A1A18; color: #F5F0E8; padding: 48px; margin-bottom: 10px; }
+    .cell-coop      { background-color: #F0B8C8; margin-bottom: 10px; }
+    .cell-footer    { background-color: #1A1A18; color: #F5F0E8; padding: 22px 32px; margin-top: 10px; }
+
+    /* this creates a two-column layout side by side */
+    .row {
+      display: grid;
+      grid-template-columns: 38% 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .col-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cell-skills    { background-color: #B8D8F0; height: 100%; }
+    .cell-education { background-color: #B8D8B0; margin-bottom: 10px; }
+    .cell-projects  { background-color: #F0E0A0; height: 100%; }
+    .cell-volunteer { background-color: #F0B8C8; margin-bottom: 10px; }
+    .cell-travel    { background-color: #B8D8F0; height: 100%; }
+
+    /* styles for titles and text */
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 64px;
+      font-weight: 800;
+      margin: 0 0 10px 0;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    h2 {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 0 0 18px 0;
+      opacity: 0.4;
+    }
+
+    h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+    }
+
+    p {
+      margin: 0 0 8px 0;
+      line-height: 1.75;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-bottom: 22px;
+    }
+
+    /* small pill-shaped labels for skills */
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 4px 12px;
+      margin: 3px 4px 3px 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #1A1A18;
+      color: #F5F0E8;
+    }
+
+    .tag-light { background-color: #F5F0E8; color: #1A1A18; }
+
+    /* each colored box gets its own darker shade for the tags inside it */
+    .cell-skills .tag,    .cell-skills .year    { background-color: #5A9DBF; color: #fff; }
+    .cell-education .tag, .cell-education .year  { background-color: #5A9B5A; color: #fff; }
+    .cell-projects .tag,  .cell-projects .year   { background-color: #C8A830; color: #fff; }
+    .cell-volunteer .tag, .cell-volunteer .year  { background-color: #C87090; color: #fff; }
+    .cell-travel .tag,    .cell-travel .year     { background-color: #5A9DBF; color: #fff; }
+    .cell-coop .tag,      .cell-coop .year       { background-color: #C87090; color: #fff; }
+
+    /* each entry (job, project, etc.) has a left border to separate it */
+    .item {
+      padding-left: 14px;
+      border-left: 3px solid rgba(0,0,0,0.15);
+      margin-bottom: 22px;
+    }
+
+    .item:last-child { margin-bottom: 0; }
+
+    .year {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .solo {
+      background-color: #5A9DBF;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .highlight {
+      background-color: #CC1E8A;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .small { font-size: 12px; opacity: 0.55; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #1A1A18;
+      opacity: 0.12;
+      margin: 20px 0;
+    }
+
+    /* bottom bar with contact links */
+    .footer-links a {
+      color: #F5F0E8;
+      margin-right: 28px;
+      font-size: 12px;
+      opacity: 0.75;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- top black box: name + contact + skills -->
+  <div class="cell cell-hero">
+    <h1>Hiba Tydrini</h1>
+    <p class="subtitle">Tydrini.hiba@gmail.com · (514) 975-7594 · github.com/HibaTydrini</p>
+    <div>
+      <span class="tag tag-light">Java</span>
+      <span class="tag tag-light">JavaScript</span>
+      <span class="tag tag-light">Python</span>
+      <span class="tag tag-light">C</span>
+      <span class="tag tag-light">PHP</span>
+      <span class="tag tag-light">HTML</span>
+      <span class="tag tag-light">CSS</span>
+      <span class="tag tag-light">SQL (MySQL)</span>
+      <span class="tag tag-light">MongoDB</span>
+      <span class="tag tag-light">React</span>
+    </div>
+  </div>
+
+  <!-- pink box explaining I am looking for an internship -->
+  <div class="cell cell-coop">
+    <h2><span class="highlight">Co-op Student</span> · Seeking Internship</h2>
+    <h3>Available Fall 2026 &amp; Winter 2026 · 4 or 8 months</h3>
+    <p>Students alternate between full-time academic terms and full-time paid work terms · real experience built into the degree.</p>
+  </div>
+
+  <!-- first two-column row: skills on the left, education and projects on the right -->
+  <div class="row">
+    <div class="col-left">
+      <div class="cell cell-skills">
+        <h2>Summary of Skills</h2>
+        <p><strong>Operating Systems</strong><br>Windows · macOS</p>
+        <hr class="divider">
+        <p><strong>Applications</strong><br>Word · Excel · PowerPoint · Eclipse · Visual Studio · GitHub</p>
+        <hr class="divider">
+        <p><strong>Programming</strong><br>Java · JavaScript · Python · C · PHP · HTML · CSS</p>
+        <hr class="divider">
+        <p><strong>Platforms</strong><br>SQL (MySQL) · MongoDB · React</p>
+        <hr class="divider">
+        <p><strong>Methodology</strong><br>Object-oriented programming · Problem solving · Teamwork</p>
+        <hr class="divider">
+        <p><strong>Languages</strong><br>French · spoken and written, proficient<br>English · spoken and written, proficient</p>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="cell cell-education">
+        <h2>Education</h2>
+        <div class="item">
+          <span class="year">2025–2028</span>
+          <h3>Bachelor's Degree in Engineering – Co-op in Software Engineering</h3>
+          <p class="small">Concordia University, Montreal, QC</p>
+          <p class="small">· Member of the Institute for Co-operative Education</p>
+          <p class="small">· Relevant courses: Object-Oriented Programming II (COMP249) · Web Programming (SOEN287) · Principles of Programming Languages (COMP348)</p>
+        </div>
+        <hr class="divider">
+        <div class="item">
+          <span class="year">2025</span>
+          <h3>D.E.C. in Computer Science and Mathematics</h3>
+          <p class="small">Collège Maisonneuve, Montréal (Québec)</p>
+        </div>
+      </div>
+
+      <div class="cell cell-projects">
+        <h2>Projects</h2>
+        <div class="item">
+          <span class="year">2025</span>
+          <h3>Course Mate – Course scheduling web application</h3>
+          <p class="small">Concordia University, Montreal (Quebec)</p>
+          <p>· Team development (4 members) of a full-stack web application for course search and scheduling<br>
+             · Built a REST API (Node.js, Express) with MongoDB and user authentication<br>
+             · Frontend developed with HTML/CSS/JavaScript and responsive design</p>
+          <div>
+            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Git</span>
+          </div>
+        </div>
+        <hr class="divider">
+        <div class="item">
+          <span class="year">2025</span>
+          <h3>Dungeon Escape game</h3>
+          <p class="small">Concordia University, Montreal (Quebec)</p>
+          <p>· Developed a Java console game (OOP) with state management, inventory, and levels<br>
+             · Used inheritance, polymorphism, interfaces, generics, and exceptions</p>
+          <div>
+            <span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Data structures</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- second two-column row: volunteer work on the left, travel on the right -->
+  <div class="row">
+    <div class="col-left">
+      <div class="cell cell-volunteer">
+        <h2>Volunteer Work</h2>
+        <div class="item">
+          <span class="year">2026</span>
+          <h3>Ring Ceremony – Engineering</h3>
+          <p class="small">Concordia University, Montreal, QC</p>
+          <p>Assisted in organizing and running the Gina Cody School ring ceremony as a volunteer.</p>
+        </div>
+        <hr class="divider">
+        <div class="item">
+          <span class="year">2025</span>
+          <h3>English Teaching</h3>
+          <p class="small">Primary School, San Pedro, Guatemala</p>
+          <p>Led English as a second language workshops for elementary students during an international stay.</p>
+        </div>
+        <hr class="divider">
+        <div class="item">
+          <span class="year">2026</span>
+          <h3>English Teaching</h3>
+          <p class="small">Primary School, San Pedro, Guatemala</p>
+          <p>Led English as a second language workshops for elementary students during an international stay.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="cell cell-travel">
+        <h2>Interests · Experience Abroad</h2>
+        <div class="item">
+          <span class="year">2025</span> <span class="solo">Solo trip</span>
+          <h3>Brazil – Rio de Janeiro</h3>
+          <p>Night hike of Morro Dois Irmãos · English teaching in a primary school.</p>
+        </div>
+        <hr class="divider">
+        <div class="item">
+          <span class="year">2026</span> <span class="solo">Solo trip</span>
+          <h3>Guatemala</h3>
+          <p>Ascent of Acatenango volcano (dormant) and Fuego volcano (active), up to 200 m from an erupting lava flow · English teaching in a primary school.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- bottom bar with my name and contact info -->
+  <div class="cell cell-footer">
+    <div class="footer-links">
+      <strong>Hiba Tydrini</strong> &nbsp;&nbsp;
+      <a href="mailto:Tydrini.hiba@gmail.com">Tydrini.hiba@gmail.com</a>
+      <a href="tel:+15149757594">(514) 975-7594</a>
+      <a href="https://github.com/HibaTydrini">github.com/HibaTydrini</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
